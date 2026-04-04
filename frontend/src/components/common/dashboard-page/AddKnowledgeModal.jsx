@@ -17,7 +17,8 @@ import { Globe, Info, Text, Upload } from "lucide-react";
 import { useState } from "react";
 
 function AddKnowledgeModal({ open, setopen }) {
-  const [tabType, settabType] = useState("website"); // website text file
+  const [tabType, settabType] = useState("website"); // website | text | file
+  
   return (
     <Dialog open={open} onOpenChange={setopen}>
       <form>

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -76,7 +77,8 @@ function CreateSection_drawer() {
                 placeholder="When should the AI use this?"
               />
               <FieldDescription className={"text-xs"}>
-                We&apos;ll send updates to this address.
+                Used by the routing model to decide when to activate this
+                section.
               </FieldDescription>
             </Field>
             <div className="flex justify-between items-center">
@@ -161,6 +163,34 @@ function CreateSection_drawer() {
               </div>
             </RadioGroup>
           </FieldGroup>
+          <div className="mb-6 flex items-center text-zinc-600 text-sm gap-3">
+            <Field>
+              <FieldLabel
+                className={`text-zinc-500 text-xs mt-5`}
+                htmlFor="allowed-topics"
+              >
+                Allowed Topics
+              </FieldLabel>
+              <Input
+                className={"border-zinc-700 h-10"}
+                id="allowed-topics"
+                placeholder="terms, billing"
+              />
+            </Field>{" "}
+            <Field>
+              <FieldLabel
+                className={`text-zinc-500 text-xs mt-5`}
+                htmlFor="blocked-topics"
+              >
+                Blocked Topics
+              </FieldLabel>
+              <Input
+                className={"border-zinc-700 h-10"}
+                id="blocked-topics"
+                placeholder="competitors, employee details"
+              />
+            </Field>
+          </div>
         </div>
 
         <DrawerFooter>

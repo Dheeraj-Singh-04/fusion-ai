@@ -6,7 +6,7 @@ import Code_embed_box from "../Code_embed_box";
 const EmbededSteps = () => {
   return (
     <ResponsiveContainer>
-      <div className="py-20">
+      <div id="integration" className="py-20">
         <p className="text-4xl ">Drop-in simplicity. </p>
 
         <p className="text-zinc-700 mt-4 text-lg">

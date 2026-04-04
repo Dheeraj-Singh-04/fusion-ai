@@ -134,7 +134,7 @@ const KnowledgePage = () => {
                   STATUS
                 </TableHead>
                 <TableHead className={`text-sm text-zinc-500  `}>
-                  LAST UPDATE
+                  CREATED AT
                 </TableHead>
                 <TableHead className={`text-sm text-zinc-500  `}>
                   ACTIONS

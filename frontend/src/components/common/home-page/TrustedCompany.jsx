@@ -3,7 +3,7 @@ import ResponsiveContainer from "../ResponsiveContainer";
 
 const TrustedCompany = () => {
   return (
-    <div className="py-8 mt-16 bg-[#08080854]">
+    <div id="features" className="py-8 mt-16 bg-[#08080854]">
       <ResponsiveContainer>
         <div className="flex items-center flex-col ">
           <p className="capitalize text-sm text-[#6d6c6c]">

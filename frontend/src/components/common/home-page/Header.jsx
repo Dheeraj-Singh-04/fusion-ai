@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../ui/button";
 import ResponsiveContainer from "../ResponsiveContainer";
 import { Link } from "react-router-dom";
+import SignIn_SignUp from "./SignIn_SignUp";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const [loginOpen, setloginOpen] = useState(true);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
   return (
     <ResponsiveContainer>
-      {" "}
       <header className="flex justify-between  items-center py-3">
         <div className="flex gap-2  items-center justify-center">
           <img
@@ -17,32 +21,56 @@ const Header = () => {
           <p className="font-semibold">SupportAI</p>
         </div>
         <div className="flex gap-8">
-          <p className="text-gray-400 text-sm text hover:text-gray-200 cursor-pointer">
+          <a
+            href="#features"
+            className="text-gray-400 text-sm text hover:text-gray-200 cursor-aointer"
+          >
             Features
-          </p>
-          <p className="text-gray-400 text-sm text hover:text-gray-200 cursor-pointer">
+          </a>
+          <a
+            href="#integration"
+            className="text-gray-400 text-sm text hover:text-gray-200 cursor-aointer"
+          >
             Intergration
-          </p>
+          </a>
 
-          <p className="text-gray-400 text-sm text hover:text-gray-200 cursor-pointer">
+          <a
+            href="#pricing"
+            className="text-gray-400 text-sm text hover:text-gray-200 cursor-aointer"
+          >
             Pricing
-          </p>
+          </a>
         </div>
-        <div className="flex gap-4  items-center justify-center">
-          <p className="text-gray-400 text-sm hover:text-gray-200 cursor-pointer">
-            Sign In
-          </p>
-          <Button className={"bg-white text-black cursor-pointer rounded-full"}>
-            Get Started
-          </Button>
-          <Link to={'/dashboard'}>
-            {" "}
-            <Button
-              className={"bg-white text-black cursor-pointer rounded-full"}
-            >
-              Dashboard
-            </Button>
-          </Link>
+        <div
+          href="#features"
+          className="flex gap-4  items-center justify-center"
+        >
+          {!isAuthenticated && (
+            <>
+              {" "}
+              <SignIn_SignUp
+                buttonClassName={
+                  "text-gray-400 text-sm hover:text-gray-200 cursor-pointer border-0"
+                }
+                type="signin"
+              />{" "}
+              <Button
+                className={"bg-white text-black cursor-pointer rounded-full"}
+              >
+                Get Started
+              </Button>
+            </>
+          )}
+          {isAuthenticated && (
+            <Link to={"/dashboard"}>
+              {" "}
+              <Button
+                className={"bg-white text-black cursor-pointer rounded-full"}
+              >
+                Dashboard
+              </Button>
+            </Link>
+          )}
         </div>
       </header>
     </ResponsiveContainer>

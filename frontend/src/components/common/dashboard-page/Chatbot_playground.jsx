@@ -2,9 +2,9 @@ import React from "react";
 import { Loader, RefreshCw, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Chatbot_playground = () => {
+const Chatbot_playground = ({ className, fullHeight }) => {
   return (
-    <div className=" border-2 rounded-xl   w-full rounded-ld p-2">
+    <div className={`border-2 rounded-xl flex flex-col   w-full rounded-ld p-2 ${className}`}>
       {/* head  */}
       <div className="p-4 flex gap-3  items-center bg-[#0d0d0d] rounded-t-xl">
         <p className="bg-green-500 h-2 w-2 rounded-full"></p>
@@ -18,7 +18,9 @@ const Chatbot_playground = () => {
       </div>
 
       {/* messages conatiner  */}
-      <div className="min-h-100 max-h-100 px-8 flex flex-col gap-4 py-4 overflow-y-auto scrollbar-slim">
+      <div
+        className={`  px-8 flex flex-col gap-4 py-4 overflow-y-auto scrollbar-slim  ${fullHeight || "min-h-100 max-h-100 "}`}
+      >
         <UserMessage />
         <AiMessage />
         <UserMessage />

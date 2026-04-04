@@ -160,6 +160,35 @@ function ViewSection_drawer({ selectedSectionToView }) {
               </div>
             </RadioGroup>
           </FieldGroup>
+
+           <div className="mb-6 flex items-center text-zinc-600 text-sm gap-3">
+                      <Field>
+                        <FieldLabel
+                          className={`text-zinc-500 text-xs mt-5`}
+                          htmlFor="allowed-topics"
+                        >
+                          Allowed Topics
+                        </FieldLabel>
+                        <Input
+                          className={"border-zinc-700 h-10"}
+                          id="allowed-topics"
+                          placeholder="terms, billing"
+                        />
+                      </Field>{" "}
+                      <Field>
+                        <FieldLabel
+                          className={`text-zinc-500 text-xs mt-5`}
+                          htmlFor="blocked-topics"
+                        >
+                          Blocked Topics
+                        </FieldLabel>
+                        <Input
+                          className={"border-zinc-700 h-10"}
+                          id="blocked-topics"
+                          placeholder="competitors, employee details"
+                        />
+                      </Field>
+                    </div>
         </div>
 
         <DrawerFooter className={"p-4 bg-[#ff000024]"}>
